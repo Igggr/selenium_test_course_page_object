@@ -14,9 +14,5 @@ class BasePage():
         return True
         
     def open(self):
-        self.browser.get(self.url)
-        
-   
-        
+        self.browser.get(self.url)     
     
-        
