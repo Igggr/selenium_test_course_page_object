@@ -17,4 +17,3 @@ def test_should_be_register_form(browser):
     page = LoginPage(browser, link)
     page.open()
     page.should_be_register_form()
-    
