@@ -1,6 +1,5 @@
 from selenium.webdriver.common.by import By
 
-
 class MainPageLocators(object):
     LOGIN_LINK = (By.CSS_SELECTOR, "#registration_link")
     
@@ -12,4 +11,5 @@ class LoginPageLocators():
     
 class ProductPageLocators():
     ADD_TO_BUSKET_BUTTON = (By.CSS_SELECTOR, ".btn-add-to-basket")
-    pass
+    # SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success .alertinner")
+    SUCCESS_MESSAGE = (By.XPATH, '//div[contains(@class, "alert-success")]/div[contains(@class,"alertinner")]')
