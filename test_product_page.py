@@ -62,6 +62,7 @@ def test_guest_can_add_product_to_cart(browser, link):
         page.open()
         page.add_to_busket()
         page.should_be_second_alert() 
+        page.should_be_succes_message_with_item_name()
 
 @pytest.mark.user
 class TestUserAddToCartFromProductPage:
@@ -93,4 +94,5 @@ class TestUserAddToCartFromProductPage:
         page.open()
         page.add_to_busket()
         page.should_be_second_alert()
+        page.should_be_succes_message_with_item_name()
 

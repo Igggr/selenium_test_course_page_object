@@ -27,6 +27,12 @@ class ProductPage(BasePage):
     
     def should_be_second_alert(self):
         assert self.solve_quiz_and_get_code(), "second alert should be present"
+        
+    def should_be_succes_message_with_item_name(self):
+        name_in_success_message = self.browser.find_element(* ProductPageLocators.SUCESS_MEASAGE_ITEM_NAME).text
+        name_in_product_page = self.browser.find_element(* ProductPageLocators.PRODUCT_PAGE_ITEM_NAME).text
+        assert name_in_success_message == name_in_product_page, \
+        "name of the item in product page doesn't match with name of the item in succes message"
                  
     def is_not_element_present(self, how, what, timeout=4):
         try:

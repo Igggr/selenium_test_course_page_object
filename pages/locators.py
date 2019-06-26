@@ -21,6 +21,8 @@ class ProductPageLocators():
     ADD_TO_BUSKET_BUTTON = (By.CSS_SELECTOR, ".btn-add-to-basket")
     # SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success .alertinner")
     SUCCESS_MESSAGE = (By.XPATH, '//div[contains(@class, "alert-success")]/div[contains(@class,"alertinner")]')
+    SUCESS_MEASAGE_ITEM_NAME = (By.CSS_SELECTOR, "#messages .alert-success .alertinner strong")
+    PRODUCT_PAGE_ITEM_NAME = (By.CSS_SELECTOR, ".product_main h1")
     
 class BasketPageLocators():
     BASKET_FIRST_ITEM = (By.CSS_SELECTOR, "#basket_formset .basket-items")
