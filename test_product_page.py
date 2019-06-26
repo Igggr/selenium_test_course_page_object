@@ -76,6 +76,7 @@ class TestUserAddToCartFromProductPage:
         email = str(time.time()) + "@fakemail.org"
         passwd = str(time.time())
         login_page.register_new_user(email, passwd)
+        page.should_be_autorised()
         yield
         # teardown
     

@@ -5,6 +5,7 @@ class BasePageLocators(object):
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     BASKET = (By.CSS_SELECTOR, ".basket-mini .btn")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+    REGISTERED_ICON = (By.XPATH, '//div[@class="alertinner wicon" and contains(text(), "register")]')
 
 class MainPageLocators(object):
     LOGIN_LINK = (By.CSS_SELECTOR, "#registration_link")

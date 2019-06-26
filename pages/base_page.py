@@ -33,3 +33,7 @@ class BasePage():
     def go_to_basket(self):
         busket = self.browser.find_element(*BasePageLocators.BASKET)
         busket.click()
+
+    def should_be_autorised(self):
+        assert self.is_element_present(*BasePageLocators.REGISTERED_ICON)
+        
