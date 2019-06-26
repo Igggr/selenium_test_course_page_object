@@ -3,10 +3,12 @@ from selenium.webdriver.common.by import By
 class BasePageLocators(object):
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
-
+    BASKET = (By.CSS_SELECTOR, ".basket-mini .btn")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
 class MainPageLocators(object):
     LOGIN_LINK = (By.CSS_SELECTOR, "#registration_link")
+    
     
     
 class LoginPageLocators():
@@ -18,3 +20,6 @@ class ProductPageLocators():
     ADD_TO_BUSKET_BUTTON = (By.CSS_SELECTOR, ".btn-add-to-basket")
     # SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success .alertinner")
     SUCCESS_MESSAGE = (By.XPATH, '//div[contains(@class, "alert-success")]/div[contains(@class,"alertinner")]')
+    
+class BasketPageLocators():
+    BASKET_FIRST_ITEM = (By.CSS_SELECTOR, "#basket_formset .basket-items")
