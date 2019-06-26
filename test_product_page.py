@@ -21,8 +21,7 @@ def test_message_dissapeared_after_adding_product_to_cart(browser, link):
     page = ProductPage(browser, link)
     page.open()
     page.add_to_busket()
-    dissapeared = page.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE)
-    assert dissapeared, "doesn't dissapeared"
+    page.should_dissapear(*ProductPageLocators.SUCCESS_MESSAGE)
 
 
 @pytest.mark.guest
@@ -52,20 +51,17 @@ def test_guest_cant_see_product_in_cart_opened_from_product_page(browser, link):
     page.open()
     page.go_to_basket()
     basket_page = CartPage(browser,  url=browser.current_url)
-    assert basket_page.is_basket_empty(), "basket should be empty"
+    basket_page.should_be_empty_basket()
 
 
 @pytest.mark.need_review
 @pytest.mark.guest
-@pytest.mark.parametrize('link', ["http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019"])
+@pytest.mark.parametrize('link', ["http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear"])
 def test_guest_can_add_product_to_cart(browser, link):
         page = ProductPage(browser, link)
         page.open()
         page.add_to_busket()
-        second_alert_is_present = page.solve_quiz_and_get_code()
-        assert second_alert_is_present, "second alert must be present" 
-
-
+        page.should_be_second_alert() 
 
 @pytest.mark.user
 class TestUserAddToCartFromProductPage:
@@ -95,8 +91,5 @@ class TestUserAddToCartFromProductPage:
         page = ProductPage(browser, link)
         page.open()
         page.add_to_busket()
-        second_alert_is_present = page.solve_quiz_and_get_code()
-        assert second_alert_is_present, "second alert must be present"   
-   
-    
+        page.should_be_second_alert()
 

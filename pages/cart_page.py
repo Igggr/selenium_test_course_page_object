@@ -9,3 +9,6 @@ class CartPage(BasePage):
             return False
         except NoSuchElementException:
             return True
+    
+    def should_be_empty_basket(self):
+        assert self.is_basket_empty(), "basket is not empty"

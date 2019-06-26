@@ -24,7 +24,9 @@ class ProductPage(BasePage):
         except NoAlertPresentException:
             print("No second alert presented")
             return False
-   
+    
+    def should_be_second_alert(self):
+        assert self.solve_quiz_and_get_code(), "second alert should be present"
                  
     def is_not_element_present(self, how, what, timeout=4):
         try:
@@ -44,6 +46,9 @@ class ProductPage(BasePage):
             return False
 
         return True
+        
+    def should_dissapear(self, how, what, timeout=4):
+       assert self.is_disappeared(how, what, timeout), "doesn't dissapeared"
     
         
     def should_not_be_success_message(self):
